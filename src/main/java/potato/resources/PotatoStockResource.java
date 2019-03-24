@@ -33,9 +33,9 @@ public class PotatoStockResource {
         PotatoBag bag1 = new PotatoBag(null, 2, PotatoBag.Supplier.OWEL, new Date(), 4);
         PotatoBag bag2 = new PotatoBag(null, 4, PotatoBag.Supplier.POTATAS_RUBEN, new Date(), 5);
         PotatoBag bag3 = new PotatoBag(null, 9, PotatoBag.Supplier.YUNNAN_SPICES, new Date(), 2);
-        bagsBuilder.add(Storage.getInstance().putBug(bag1));
-        bagsBuilder.add(Storage.getInstance().putBug(bag2));
-        bagsBuilder.add(Storage.getInstance().putBug(bag3));
+        bagsBuilder.add(Storage.getInstance().putBag(bag1));
+        bagsBuilder.add(Storage.getInstance().putBag(bag2));
+        bagsBuilder.add(Storage.getInstance().putBag(bag3));
         return bagsBuilder.build();
     }
 
@@ -59,11 +59,11 @@ public class PotatoStockResource {
 
     @PUT
     public PotatoBag replace(@NotNull @Valid PotatoBag potatoBag) {
-        return Storage.getInstance().updateBug(potatoBag);
+        return Storage.getInstance().updateBag(potatoBag);
     }
 
     @POST
     public PotatoBag add(@NotNull @Valid PotatoBag potatoBag) {
-        return Storage.getInstance().putBug(potatoBag);
+        return Storage.getInstance().putBag(potatoBag);
     }
 }

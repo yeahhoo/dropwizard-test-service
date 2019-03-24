@@ -4,7 +4,7 @@ import io.dropwizard.Configuration;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Configuration for the PotatoBags service. */
-public final class PotatoConfiguration extends Configuration {
+public final class PotatoBagConfiguration extends Configuration {
 
     private Integer defaultNumberBags = 3;
 

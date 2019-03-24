@@ -1,10 +1,10 @@
-# Potato
+# Potato Bags service
 
 How to start the Potato application
 ---
 
 1. Run `mvn clean install` to build your application
-2. Start application with `java -jar target/potato-service-1.0-SNAPSHOT.jar server config.yml`
+2. Start application with `java -jar target/potatobag-service-1.0-SNAPSHOT.jar server config.yml`
 
 In case of any errors in log try to remove JaxB dependencies from Maven POM.
 It seems that in java 9 JaxB stopped being shipped with JRE by default so it should be included directly now.
