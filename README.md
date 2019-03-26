@@ -13,7 +13,7 @@ Perhaps this problem may appear if you are on java 8 since there might be a conf
 3. If you want to run it in debug mode use the command as follows:
 
 ```bash
-java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 -jar target/potato-service-1.0-SNAPSHOT.jar server config.yml
+java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 -jar target/potatobag-service-1.0-SNAPSHOT.jar server config.yml
 ```
 
 API Usage (curl on Windows)
@@ -21,12 +21,12 @@ API Usage (curl on Windows)
 
 1. Extract all data
 ```bash
-curl -X GET http://localhost:8080/potatobags/list/{numberOfBags}
+curl -X GET http://localhost:8080/potatobags/{numberOfBags}/extract
 ```
 
 2. Extract default number of entries
 ```bash
-curl -X GET http://localhost:8080/potatobags/list/
+curl -X GET http://localhost:8080/potatobags/
 ```
 
 3. Init couple of test bags to check
@@ -41,7 +41,7 @@ curl -X POST -H "content-type: application/json" -d "{\"capacity\":14,\"supplier
 
 5. Edit a bag (must be id).
 ```bash
-curl -X PUT -H "content-type: application/json" -d "{\"id\":\"0\",\"capacity\":14,\"supplier\":\"Owel\",\"date\":\"2019-03-23T19:59:41.394Z\",\"price\":5}" http://localhost:8080/potatobags
+curl -X PUT -H "content-type: application/json" -d "{\"id\":\"0\",\"capacity\":14,\"supplier\":\"Owel\",\"date\":\"2019-03-23T19:59:41.394Z\",\"price\":5}" http://localhost:8080/potatobags/
 ```
 
 Health Check

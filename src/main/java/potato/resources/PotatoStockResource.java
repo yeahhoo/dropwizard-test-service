@@ -40,20 +40,19 @@ public class PotatoStockResource {
     }
 
     @GET
-    @Path("list")
-    public List<PotatoBag> getThreeBags() {
+    public List<PotatoBag> getDefaultNumberOfBags() {
         return Storage.getInstance().getBagsWithLimit(defaultBugsNumber);
     }
 
     @GET
-    @Path("list/{limit}")
+    @Path("{limit}/extract")
     public List<PotatoBag> getBags(@PathParam("limit") Integer bagsLimit) {
         return Storage.getInstance().getBagsWithLimit(bagsLimit);
     }
 
     @GET
     @Path("{id}")
-    public PotatoBag getBags(@PathParam("id") String id) {
+    public PotatoBag getBag(@PathParam("id") String id) {
         return Storage.getInstance().getBag(id);
     }
 

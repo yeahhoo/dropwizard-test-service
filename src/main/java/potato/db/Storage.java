@@ -42,24 +42,24 @@ public final class Storage {
 
     /**
      * Updates existing bag.
-     * @param entry  bug to be updated.
+     * @param entry  bag to be updated.
      *
      * @return updated bag
      */
     public PotatoBag updateBag(PotatoBag entry) {
-        checkArgument(!StringUtils.isEmpty(entry.getId()), "Can not update bug with empty id");
+        checkArgument(!StringUtils.isEmpty(entry.getId()), "Can not update bag with empty id");
         bagsMap.put(entry.getId(), entry);
         return entry;
     }
 
     /**
      * Stores new bag.
-     * @param entry  bug to be stored.
+     * @param entry  bag to be stored.
      *
      * @return created bag
      */
     public PotatoBag putBag(PotatoBag entry) {
-        checkArgument(StringUtils.isEmpty(entry.getId()), "Can not persist new bug with non empty id");
+        checkArgument(StringUtils.isEmpty(entry.getId()), "Can not persist new bag with non empty id");
         String newId = String.valueOf(idGenerator.getAndIncrement());
         PotatoBag newEntry = new PotatoBag(newId, entry);
         bagsMap.put(newId, newEntry);

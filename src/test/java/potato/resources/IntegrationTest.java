@@ -24,7 +24,7 @@ public class IntegrationTest {
     @Test
     public void testContextIsOk() {
         final List<PotatoBag> list = RULE.client().target("http://localhost:" + RULE.getLocalPort() + "/potatobags")
-                .path("list")
+                .path("3/extract")
                 .request()
                 .get(List.class);
         assertThat(list.isEmpty()).isTrue();
